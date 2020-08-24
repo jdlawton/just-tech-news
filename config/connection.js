@@ -3,15 +3,6 @@ const Sequelize = require('sequelize');
 
 require('dotenv').config();
 
-//create connection to our database, pass in my mysql information for username and password
-/* Connection prior to deploying on Heroku
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: 3306
-});
-*/
-
 let sequelize;
 
 if(process.env.JAWSDB_URL) {
