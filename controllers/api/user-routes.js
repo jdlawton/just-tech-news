@@ -58,7 +58,7 @@ router.get('/:id', (req, res) => {
 });
 
 //POST /api/users
-router.post('/', withAuth, (req, res) => {
+router.post('/', (req, res) => {
     //expects {username: 'Lawton', email: 'lawton@gmail.com', password: 'password1234'}
     User.create({
         username: req.body.username,
@@ -123,7 +123,7 @@ router.post('/logout', withAuth, (req, res) => {
 });
 
 //PUT /api/users/1
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     //expects {username: 'Lawton', email: 'lawton@gmail.com', password: 'password1234'}
 
     //if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
